@@ -1,0 +1,653 @@
+body{
+    background-color: #985717;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* permite hacer scroll vertical */
+    scroll-snap-type: mandatory; /* activa el scroll por secciones */
+    
+}
+
+header{
+    position: fixed; /* para que quede fijo */
+    z-index: 100; /* para que se vea encima del contenido */
+    justify-content: center; 
+    align-items: center;
+    display: flex;
+    top: 0;                  /* Lo posiciona en la parte superior */
+    left: 0;
+    right: 0;
+    height: 90px;
+
+    /*para hacer el fecto de aparición con scroll*/
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 2s ease-out forwards;
+    
+}
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    /*Fin efecto aparecer */
+}
+
+/* ------------------------------------- */
+/* From Uiverse.io by Mahmoud-walid */ 
+/* animation Bola */
+@keyframes rotateBall {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateY(360deg) rotateX(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(720deg) rotateX(720deg) rotateZ(360deg);
+  }
+}
+
+@keyframes bounceBall {
+  0% {
+    transform: translateY(-70px) scale(1, 1);
+  }
+  15% {
+    transform: translateY(-56px) scale(1, 1);
+  }
+  45% {
+    transform: translateY(70px) scale(1, 1);
+  }
+  50% {
+    transform: translateY(73.5px) scale(1, 0.92);
+  }
+  55% {
+    transform: translateY(70px) scale(1, 0.95);
+  }
+  85% {
+    transform: translateY(-56px) scale(1, 1);
+  }
+  95% {
+    transform: translateY(-70px) scale(1, 1);
+  }
+  100% {
+    transform: translateY(-70px) scale(1, 1);
+  }
+}
+
+.ball {
+  animation-name: bounceBall;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  border-radius: 50%;
+  height: 60px;
+  position: relative;
+  transform: translateY(-70px);
+  transform-style: preserve-3d;
+  width: 60px;
+  z-index: 1;
+}
+
+.ball::before {
+  background: radial-gradient(circle at 36px 20px, #ff8c16, #b35100);
+  border: 2px solid #333333;
+  border-radius: 50%;
+  content: "";
+  height: calc(100% + 6px);
+  left: -6px;
+  position: absolute;
+  top: -3px;
+  transform: translateZ(1vmin);
+  width: calc(100% + 6px);
+}
+
+.ball .inner {
+  animation-name: rotateBall;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.ball .line::before,
+.ball .line::after {
+  border: 2px solid #333333;
+  border-radius: 50%;
+  content: "";
+  height: 99%;
+  position: absolute;
+  width: 99%;
+}
+
+.ball .line::before {
+  transform: rotate3d(0, 0, 0, 0);
+}
+
+.ball .line::after {
+  transform: rotate3d(1, 0, 0, 90deg);
+}
+
+.ball .line--two::before {
+  transform: rotate3d(0, 0, 0, 2deg);
+}
+
+.ball .line--two::after {
+  transform: rotate3d(1, 0, 0, 88deg);
+}
+
+.ball .oval::before,
+.ball .oval::after {
+  border-top: 4px solid #333333;
+  border-radius: 50%;
+  content: "";
+  height: 99%;
+  position: absolute;
+  width: 99%;
+}
+
+.ball .oval::before {
+  transform: rotate3d(1, 0, 0, 45deg) translate3d(0, 0, 6px);
+}
+
+.ball .oval::after {
+  transform: rotate3d(1, 0, 0, -45deg) translate3d(0, 0, -6px);
+}
+
+.ball .oval--two::before {
+  transform: rotate3d(1, 0, 0, 135deg) translate3d(0, 0, -6px);
+}
+
+.ball .oval--two::after {
+  transform: rotate3d(1, 0, 0, -135deg) translate3d(0, 0, 6px);
+}
+
+@keyframes bounceShadow {
+  0% {
+    filter: blur(3px);
+    opacity: 0.6;
+    transform: translateY(73px) scale(0.5, 0.5);
+  }
+  45% {
+    filter: blur(1px);
+    opacity: 0.9;
+    transform: translateY(73px) scale(1, 1);
+  }
+  55% {
+    filter: blur(1px);
+    opacity: 0.9;
+    transform: translateY(73px) scale(1, 1);
+  }
+  100% {
+    filter: blur(3px);
+    opacity: 0.6;
+    transform: translateY(73px) scale(0.5, 0.5);
+  }
+}
+
+.shadow {
+  animation-name: bounceShadow;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  background: black;
+  filter: blur(2px);
+  border-radius: 50%;
+  height: 6px;
+  transform: translateY(73px);
+  width: 54px;
+}
+.container{
+    margin-top: 60px;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+   
+}
+/* FIN animation Bola /*
+/* ------------------------------------- */
+
+
+
+nav{
+    align-items: center;
+    display: flex;
+    gap: 80px;
+}
+
+
+nav a{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-size: 20px;
+
+    /* linea debajo de cada a */
+    position: relative; /* permite posicionar el ::after dentro del enlace */
+}
+
+nav a::after{
+    content: ""; /* crea el pseudo-elemento vacío (la línea) */
+    position: absolute; /* permite colocarlo debajo del texto */
+    width: 0%;    /*la línea inicia con tamaño 0 */
+    height: 3px;   /*gorsor de la linea */
+    background-color: rgba(255, 198, 12, 0.74);
+    left: 0;   /* alineado al inicio del enlace */
+    bottom: -3px;   /* ubicación justo debajo del texto */
+    transition: width 0.3s; /* animación de expansión */
+}
+nav a:hover::after{
+    width: 100%; /* al pasar el mouse, la línea se expande */
+
+  /* finalizacion de efecto linea debajo de los a */
+}
+
+
+.iconoBebida{
+    width: 90px;
+    height: 140px;
+    left: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.enlaceicono{
+    position: absolute;
+    left: 20px;
+}
+
+
+.iconoBebida:hover{
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 10px rgba(255, 198, 12, 0.74));
+
+
+}
+
+/* al entrar a la pagina el texto y la imagen salen muy abajo "arreglarlo" */
+
+.Inicio1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0; 
+
+    /*para hacer el fecto de aparición con scroll*/
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 2s ease-out forwards;
+}
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    /*Fin efecto aparecer */
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    
+}
+.bebida3{
+    margin-right: 50px;
+    height: auto;
+    max-width: 400px;
+}
+
+section{ /* ajustar el scroll para todos los section */
+    min-height: 100vh;
+}
+
+#Inicio{
+    margin-top: 70px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    
+    
+}
+h1{
+  font-family: "Rubik Distressed", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 40px;
+}
+h2{
+  font-family: "Rubik Distressed", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+.estrellas{
+    display: flex;
+    color: rgb(211, 181, 12);
+    gap: 20px;
+    font-size: 40px;
+    transition: transform 0.2s ease;
+}
+.estrellas:hover{
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 10px rgba(255, 198, 12, 0.74));
+}
+
+/* fin section INICIO */
+
+
+
+/*Section sobre Nosotros */
+
+.SobreNosotrosh2{
+    text-align: center;
+    padding-top: -40px;
+}
+
+#SobreNosotros{
+    background-color: #A47648;
+    padding: 80px 0;
+
+}
+
+.aparecer{
+  opacity: 0;
+  transform: scale(0.9);
+  transition: .7s ease-in-out all;
+}
+.aparecer.visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+.texto-sobre-nosotrosh2{
+  text-align: center;
+  font-size: 30px;
+}
+
+.mision, .vision{
+  width: 380px;
+  height: 300px;
+  background-color: #5D3D1C;
+  border-radius: 50px;
+  border: solid #8F4C00;
+  
+}
+
+.contenedor-sobre-nosotros{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.misionh2, .visionh2{
+  text-align: center;
+}
+
+.texto-mision, .texto-vision{
+  text-align: center;
+  color: white;
+  font-size: 23px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: justify;
+  padding: 10px;
+
+}
+
+/* FINAL section Sobre Nosotros */
+
+
+
+/* section Productos */
+#Productos{
+  background-color: #774C22;
+  padding: 80px 0;
+}
+
+.productosh2{
+  text-align: center;
+  padding-top: -50px;
+}
+.contenedor-productos{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  
+}
+
+
+.producto1, .producto2, .producto3{
+  width: 300px;
+  height: 300px;
+  background-color: #522C05;
+  border-radius: 20px;
+  border: solid black;
+
+}
+
+.bebidas{
+  width: 200px;
+  height: 300px;
+  margin-left: 50px;
+}
+.texto-productos{
+  text-align: justify;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.aparecerproductos{
+  opacity: 0;
+  transform: scale(0.9);
+  transition: .7s ease-in-out all;
+}
+.aparecerproductos.visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* FINAL SECTION PRODUCTOS */
+
+/*SECTION BLOG*/
+
+#Blog{
+  background-color:#B47A48 ;
+  padding: 80px 0;
+}
+.blogh2-titulo{
+  text-align: center;
+  font-size: 40px;
+}
+.blogh2{
+  text-align: center;
+  font-size: 40px;
+}
+.contenedor-Blog{
+  display: flex;
+  
+}
+.combinacionIMGS{
+  margin-top: -130px;
+}
+.texto-leer-mas{
+  color: white;
+  text-align: justify;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.texto-blog{
+  margin-right: 100px;
+
+}
+
+
+/* From Uiverse.io by SteveBloX */ 
+.btn-leer-mas {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #e3f7f0d5;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  width: 80px;
+  height: 20px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-leer-mas:hover {
+  background-color: #d1a71ee5;
+  box-shadow: 0px 15px 20px  #c49d1ce0;
+  color: #fff;
+  transform: translateY(-7px);
+}
+.btn-leer-mas:active {
+  transform: translateY(-1px);
+}
+/* FIN Univers.io */
+
+
+
+.leer-mas summary{
+  list-style: none;
+}
+.leer-mas summary::-webkit-details-marker{
+  display: none;
+}
+
+.aparecerblog{
+  opacity: 0;
+  transform: scale(0.9);
+  transition: .7s ease-in-out all;
+}
+.aparecerblog.visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*FIN SECTION BLOG */
+
+
+
+/* Section Contacto */
+#Contacto{
+  background-color: #985717;
+}
+.contenedor-contacto{
+  width: 450px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.192);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50px;
+  margin-top: 100px;
+  margin-left: 70px;
+  backdrop-filter: blur(10px);
+  transition: all .3s;
+}
+.contenedor-contacto:hover{
+  box-shadow: 0px 0px 30px 1px rgb(189, 117, 9);
+
+}
+
+
+.Contactanosh2{
+  margin-top: -40px;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+}
+.labelform{ /*el label de cada input se pone invisible pero sigue estando ahi */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+/* From Uiverse.io by Praashoo7 */ 
+input, textarea {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+
+input:focus, textarea:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+.Enviarform{
+  cursor: pointer;
+}
+input::placeholder,
+textarea::placeholder{
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor-forms{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.contenedor-padre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.aparecercontacto{
+  opacity: 0;
+  transform: scale(0.9);
+  transition: .7s ease-in-out all;
+}
+.aparecercontacto.visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* FIN SECTION CONTACTO */
+
+
+
+
+
+
+
+
+
+
+
+
