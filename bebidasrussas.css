@@ -643,6 +643,465 @@ textarea::placeholder{
 
 
 
+/* ============================================ */
+/* MEDIA QUERIES PARA RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    
+    /* Header */
+    nav {
+        gap: 40px;
+    }
+    
+    nav a {
+        font-size: 18px;
+    }
+    
+    .iconoBebida {
+        width: 70px;
+        height: 110px;
+    }
+    
+    /* Sección Inicio */
+    .Inicio1 {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .bebida3 {
+        max-width: 300px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        right: 50px;
+        top: 30px;
+    }
+    
+    h1 {
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    /* Sobre Nosotros */
+    .contenedor-sobre-nosotros {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mision, .vision {
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        min-height: 300px;
+    }
+    
+    /* Productos */
+    .contenedor-productos {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .producto1, .producto2, .producto3 {
+        width: 280px;
+    }
+    
+    .bebidas {
+        width: 180px;
+        height: 280px;
+        margin-left: 50px;
+    }
+    
+    /* Blog */
+    .contenedor-Blog {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .combinacionIMGS {
+        margin-top: 0;
+        max-width: 80%;
+        height: auto;
+    }
+    
+    .texto-blog {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    
+    /* Contacto */
+    .contenedor-padre {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .contenedor-contacto {
+        width: 90%;
+        max-width: 450px;
+        margin-left: 0;
+    }
+    
+    .contacto-info {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+/* Móviles (hasta 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* Header */
+    header {
+        height: 70px;
+        padding: 0 10px;
+    }
+    
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+    
+    nav a {
+        font-size: 14px;
+    }
+    
+    .iconoBebida {
+        width: 50px;
+        height: 80px;
+    }
+    
+    .enlaceicono {
+        left: 10px;
+    }
+    
+    /* Animación bola - más pequeña en móvil */
+    .container {
+        right: 20px;
+        top: 20px;
+        transform: scale(0.7);
+    }
+    
+    /* Sección Inicio */
+    #Inicio {
+        margin-top: 90px;
+    }
+    
+    .Inicio1 {
+        padding: 10px;
+    }
+    
+    .bebida3 {
+        max-width: 250px;
+    }
+    
+    .texto {
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    .estrellas {
+        gap: 10px;
+        font-size: 30px;
+        justify-content: center;
+    }
+    
+    /* Sobre Nosotros */
+    #SobreNosotros {
+        padding: 40px 10px;
+    }
+    
+    .SobreNosotrosh2 {
+        font-size: 28px;
+    }
+    
+    .texto-sobre-nosotrosh2 {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+    
+    .mision, .vision {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .texto-mision, .texto-vision {
+        font-size: 18px;
+    }
+    
+    /* Productos */
+    #Productos {
+        padding: 40px 10px;
+    }
+    
+    .productosh2 {
+        font-size: 28px;
+    }
+    
+    .contenedor-productos {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .producto1, .producto2, .producto3 {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+        padding-bottom: 20px;
+    }
+    
+    .bebidas {
+        width: 160px;
+        height: 240px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .texto-productos {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+    
+    /* Blog */
+    #Blog {
+        padding: 40px 10px;
+    }
+    
+    .blogh2-titulo {
+        font-size: 28px;
+    }
+    
+    .blogh2 {
+        font-size: 24px;
+    }
+    
+    .blogh2-sub {
+        font-size: 18px;
+    }
+    
+    .contenedor-Blog {
+        padding: 0 10px;
+    }
+    
+    .combinacionIMGS {
+        max-width: 100%;
+    }
+    
+    .texto-leer-mas {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+    
+    /* Contacto */
+    #Contacto {
+        padding: 40px 10px;
+    }
+    
+    .contenedor-contacto {
+        width: 95%;
+        height: auto;
+        padding: 30px 10px;
+        margin-top: 50px;
+    }
+    
+    .Contactanosh2 {
+        font-size: 28px;
+        margin-top: -20px;
+    }
+    
+    .formulario {
+        width: 90%;
+    }
+    
+    .contacto-info {
+        width: 90%;
+    }
+    
+    .contacto-info h2 {
+        font-size: 16px;
+        word-wrap: break-word;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media screen and (max-width: 480px) {
+    
+    /* Header */
+    nav {
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 12px;
+    }
+    
+    .iconoBebida {
+        width: 40px;
+        height: 60px;
+    }
+    
+    /* Inicio */
+    .bebida3 {
+        max-width: 200px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 14px;
+    }
+    
+    .estrellas {
+        font-size: 25px;
+        gap: 8px;
+    }
+    
+    /* Hacer la animación de bola más pequeña en móviles */
+    .container {
+        transform: scale(0.5);  /* La hace 50% más pequeña */
+        right: 10px;            /* La mueve más a la derecha */
+        top: 10px;              /* La sube más arriba */
+    }
+    
+    /* Sobre Nosotros */
+    .SobreNosotrosh2 {
+        font-size: 24px;
+    }
+    
+    .texto-sobre-nosotrosh2 {
+        font-size: 16px;
+    }
+    
+    .misionh2, .visionh2 {
+        font-size: 20px;
+    }
+    
+    .texto-mision, .texto-vision {
+        font-size: 16px;
+    }
+    
+    /* Productos */
+    .productosh2 {
+        font-size: 24px;
+    }
+    
+    .producto1, .producto2, .producto3 {
+        max-width: 280px;
+    }
+    
+    .bebidas {
+        width: 140px;
+        height: 200px;
+    }
+    
+    .texto-productos {
+        font-size: 16px;
+    }
+    
+    /* Blog */
+    .blogh2-titulo {
+        font-size: 24px;
+    }
+    
+    .blogh2 {
+        font-size: 20px;
+    }
+    
+    .blogh2-sub {
+        font-size: 16px;
+    }
+    
+    .texto-leer-mas {
+        font-size: 14px;
+    }
+    
+    .btn-leer-mas {
+        font-size: 10px;
+        padding: 1em 2em;
+    }
+    
+    /* Contacto */
+    .Contactanosh2 {
+        font-size: 24px;
+    }
+    
+    .contacto-info h2 {
+        font-size: 14px;
+    }
+    
+    input, textarea {
+        font-size: 14px;
+    }
+}
+
+/* Ajustes adicionales para mejorar la experiencia */
+@media screen and (max-width: 768px) {
+    /* Mejorar scroll en móvil */
+    body {
+        scroll-snap-type: none;
+    }
+    
+    section {
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+    
+    /* Ajustar padding general */
+    .texto {
+        text-align: center;
+    }
+    
+    /* Mejorar visualización de formulario */
+    .formulario {
+        gap: 15px;
+    }
+}
+
+/* Landscape móvil (orientación horizontal) */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    #Inicio {
+        margin-top: 100px;
+    }
+    
+    .Inicio1 {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .bebida3 {
+        max-width: 200px;
+    }
+    
+    section {
+        min-height: auto;
+    }
+}
+
+
+
+
 
 
 
